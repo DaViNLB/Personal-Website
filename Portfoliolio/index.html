@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D Lynks' Portfoliolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/b9b5b72753.js" crossorigin="anonymous"></script>
+</head>
+<!--            --------------------HOME--------------------            -->
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/DLB Logo Rainbow.png" class="logo">
+                <ul class= "side-menu" id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="https://github.com/DaViNLB">Github</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Fun Haver, Creator, and Programmer</p>
+                <h1>Hi! I'm <span>Davin Lynk Bryfogle</span>,<br> from Delaware, U.S.A.</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    var sidemenu = document.getElementById("sidemenu");
+    var menuButton = document.getElementById("menuButton");
+    var menu = document.getElementById("menu");
+//Function for toggle side-menu on home page
+menuButton.addEventListener("click", function() {
+    menu.classList.toggle("open");
+  });
+function closemenu() {
+    sidemenu.style.right = "-200px";
+}
+
+// Close all tabs when the page loads
+window.onload = function() {
+    closeAllTabs();
+    closemenu(); // Ensure the menu is closed on page load
+};
+// Function to close all tabs
+function closeAllTabs() {
+    for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].classList.remove("active-tab");
+    }
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active-link");
+    }
+}
+
+// Function to toggle a specific tab in about page
+function toggleTab(tabname) {
+    var selectedTab = document.getElementById(tabname);
+    var isCurrentlyActive = selectedTab.classList.contains("active-tab");
+
+    closeAllTabs();
+
+    if (!isCurrentlyActive) {
+        selectedTab.classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+    }
+}
+
+// Close all tabs when the page loads
+window.onload = closeAllTabs;
+</script>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function openTab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        document.getElementById(tabname).classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+    }
+</script>
+</html>
+</body>
