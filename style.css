@@ -1,0 +1,791 @@
+@font-face {
+    font-family: 'Silkscreen';
+    src: url(Fonts/Silkscreen/slkscr.ttf) format('truetype'),
+    url(Fonts/Silkscreen/slkscrb.ttf) format('truetype'),
+    url(Fonts/Silkscreen/slkscre.ttf) format('truetype'),
+    url(Fonts/Silkscreen/slkscreb.ttf) format('truetype');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Silkscreen', sans-serif;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+/*                   HOME PAGE                     ---------------HOME PAGE---------------                     HOME PAGE                  */
+#header{
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    background-image: url(Images/DBot.png);
+    background-size: 675px 675px;
+    background-repeat: no-repeat;
+    background-position: 80% 100%;
+    border: 3px solid cyan;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(3, 150, 235, 0.1);
+    position: relative; /* new */
+    overflow: hidden;
+}
+.dropdown {
+    position: relative;
+  }
+  
+  /* Hide dropdown by default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #111; /* Adjust to match your nav style */
+    min-width: 180px;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  /* Style the dropdown items */
+  .dropdown-menu li a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #333;
+  }
+  
+  /* Show dropdown on hover */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+.container{
+    padding: 50px 10%;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo-container{
+    position: absolute; /* new */
+    top: 0; /* new */
+    left: 0; /* new */
+    display: flex;
+    align-items: left;
+    margin-left: 0;
+}
+
+.logo{
+    width: 500px;
+    align-items: left;
+    margin-left: 125px;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin-left: auto;
+    margin-right: 40px;
+    margin-top: 0px;
+    margin-bottom: 250px;
+    vertical-align: top; /* new */
+}
+nav ul li a{
+    color:white;
+    text-decoration:solid;
+    font-size: 25px;
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* new */
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: cyan;
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+    color: cyan;
+}
+.menu-button {
+    display: block; /* Ensure the button is always visible */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white; /* Match the theme */
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other elements */
+    position: relative; /* Adjust position if needed */
+    padding: 10px;
+}
+
+.menu-button:hover {
+    color: cyan; /* Add hover effect */
+}
+
+.side-menu {
+    display: none; /* Hide the menu by default */
+    list-style: none;
+    flex-direction: column; /* Stack items vertically */
+    background-color: #333; /* Match the theme */
+    position: absolute;
+    top: 50px; /* Adjust based on your layout */
+    right: 10px; /* Align with the button */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Ensure it appears above other elements */
+}
+
+.side-menu.open {
+    display: flex; /* Show the menu when open */
+}
+
+.side-menu li {
+    margin: 10px 0; /* Add spacing between menu items */
+}
+
+.side-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu li a:hover {
+    color: cyan; /* Add hover effect */
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block; /* Ensure the button is visible */
+    }
+
+    .side-menu {
+        position: fixed; /* Make it fixed for better UX */
+        top: 0;
+        right: -250px; /* Start off-screen */
+        width: 250px;
+        height: 100vh;
+        background-color: #333;
+        transition: transform 0.3s ease;
+    }
+
+    .side-menu.open {
+        transform: translateX(-250px); /* Slide into view */
+    }
+}
+.header-text{
+    margin-top: -7%; /* changed */
+    font-size: 30px;
+
+}
+.header-text p{
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+.header-text h1{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.header-text h1 span{
+    color:aqua;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #111;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid cyan;
+  width: 80%;
+  max-width: 500px;
+  color: #93E9BE;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: cyan;
+}
+
+.close {
+  color: cyan;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: white;
+}
+/*                 ABOUT                   ----------------ABOUT----------------                      ABOUT                  */
+#about{
+    /* This is the about section. It is a container element that provides a black background and a border around the about section */
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width : 100vw;
+    color: #93E9BE;
+    background-color: #000000;
+    border: 3px solid #93E9BE;
+    border-radius: 15px;
+}
+.container{
+}
+.row{
+    /* This is the main row of the about section. It uses flexbox to layout the content */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    /* This is the left hand side of the about section. It contains an image */
+    flex-basis: 60%;
+}
+.about-col-1 img{
+    /* This is the image on the left hand side of the about section */
+    width: 70%;
+    border-radius: 15px;
+}
+.about-col-2{
+    /* This is the right hand side of the about section. It contains the text */
+    flex-basis: 35%; 
+    align-items: right;  
+}
+.about-col-2 h1{
+    /* This is the title of the about section */
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    /* This is the container for the tab titles */
+    display:flex;
+    margin: 20px 0 40px;
+    justify-content: flex-end;
+}
+.tab-links {
+    margin-right: 60px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after { /* Fixed selector */
+    content: '';
+    width: 0;
+    height: 5px;
+    background: #00FFFF;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 20px 0;
+}
+.tab-contents ul li span{
+    color: cyan;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+.active-link{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: cyan;
+}
+
+/*                 SERVICES                 ----------------SERVICES----------------                     SERVICES                 */
+#services{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width : 100vw;
+    background-color: #000000;
+    border: 3px solid #00FFFF;
+    border-radius: 15px;
+}
+#services .sub-title{
+    color: white;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    color:black;
+}
+.services-list div{
+    background: #93E9BE;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: blue;
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div a:hover{
+    color: cyan;
+}
+.services-list div:hover{
+    background: darkslategray;
+    transform: translateY(-10px);
+    color: #93E9BE;
+}
+/*              PORTFOLIO               ----------------PORTFOLIO----------------                 PORTFOLIO              */
+#portfolio{
+    padding: 0;
+    margin: 0;
+    min-height: 100vh; /* Adjust to fit content if it grows larger */
+    width: 100vw;
+    color: #93E9BE;
+    background-color: #000000;
+    border: 3px solid #93E9BE;
+    border-radius: 15px;
+    box-sizing: border-box; /* Ensures border is included in the dimensions */
+    overflow: hidden; /* Hides extra content that exceeds height */
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    text-align: left;
+}
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    padding: 50px; /* Use padding instead of margins */
+    margin: 0; /* Remove margins to prevent overflow */
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+.layer{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.6), cyan);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: black;
+}
+.layer h3:hover{
+    color: #93E9BE;
+}
+.layer p{
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+}
+.layer a{
+    margin-top: 20px;
+    color: cyan;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.layer a:hover{
+    background: white;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 3px solid cyan;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #93E9BE;
+    transition: background 0.5s, text-decoration 0.5s;
+}
+.btn:hover{
+    background: cyan;
+    color: white;
+    text-decoration: underline;
+    border: 3px solid #93E9BE;
+}
+
+/**                 CONTACT                   ----------------CONTACT----------------           CONTACT                              */
+#contact {
+    width: 100%;
+    height: 100vh;
+    color: #93E9BE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid cyan;
+    border-radius: 15px;
+}
+.contact container {
+    padding: 25px 0 0px;
+    color: #93E9BE;
+    background-color: #000000;
+    border: 3px solid cyan;
+    border-radius: 15px;
+    flex-grow: 1; /* This makes the container fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sub-title{
+    margin-top: 100px;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    text-align: left;
+}
+.contact-left{
+    flex-basis: 35%;
+    margin-left: 75px;
+    margin-top: 50px;
+}
+.contact-right{
+    flex-basis: 55%;
+    margin-right: 50px;
+    margin-top: 250 px;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: cyan;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #93E9BE;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: cyan;
+    transform: translateY(-5px);
+}
+.btn2{
+    display: inline-block;
+    background: black;
+    margin-top: 20px;
+    border: 3px solid cyan;
+    padding: 14px 50px;
+    border-radius: 6px;
+    border-color: cyan;
+    text-decoration: none;
+    color: cyan;
+    font-weight: 400;
+    transition: background 0.5s;
+}
+.btn2:hover{
+    background: cyan;
+    text-decoration: underline;
+    color: white;
+    border: 3px solid #93E9BE;
+}
+.btn3{
+    display: inline-block;
+    background: black;
+    margin-top: 20px;
+    border: 3px solid cyan;
+    padding: 14px 50px;
+    border-radius: 6px;
+    border-color: cyan;
+    text-decoration: none;
+    color: cyan;
+    font-weight: 400;
+    transition: background 0.5s;
+}
+.btn3:hover{
+    background: cyan;
+    text-decoration: underline;
+    color: white;
+    border: 3px solid #93E9BE;
+}   
+.contact-right form submit-to-google-sheet{
+    width: 100%;
+}
+form input, form textarea{
+    font-family: sans-serif;
+    width: 100%;
+    border: 3px solid #93E9BE;
+    outline: none;
+    background: cyan;
+    padding: 15px;
+    margin: 15px 0;
+    color: black;
+    font-size: 18px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+form .btn3{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 25px 0;
+    background: cyan;
+    font-weight: 300;
+    color: white;
+    border-radius: 6px;
+    border: 3px solid #93E9BE;
+}
+.copyright i{
+    color: white;
+    font-size: 25px;
+}
+.copyright p img{
+    width: 50px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/*                    small screens                 ------------Media queries for small screens-----------                 small screens                    */
+.fa-solid fa-square-xmark, .fa-solid fa-ellipsis {
+    display: none;
+}
+@media screen and (max-width: 600px){
+   
+    nav {
+        position: relative;
+    }
+
+    .side-menu {
+        width: 250px;
+        height: 100vh;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        top: 0;
+        right: -250px; /* Start off-screen */
+        transition: transform 0.3s ease;
+      }
+      .side-menu.open {
+        transform: translateX(-250px); /* Slide it into view */
+      }
+      .ellipsis-button {
+        font-size: 24px;
+        color: cyan;
+        background-color: transparent;
+      }
+    
+      .ellipsis-button:hover {
+        color: white; /* Change color on hover */
+      }
+    nav ul li {
+        display: block;
+        margin: 25px 0 25px 25px;
+    }
+
+    nav ul .fa-square-xmark {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+        display: block;
+    }
+
+    .fa-ellipsis {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+
+    /* Hide ellipsis when menu is open */
+    .menu-open .fa-ellipsis {
+        display: none;
+    }
+
+    /* Show menu when it's open */
+    .menu-open ul {
+        right: 0;
+    }
+
+    /* Your existing styles for smaller screens */
+    body {
+        font-family: 'Silkscreen', sans-serif;
+        line-height: 1.6;
+        color: white;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    #header {
+        background-color: #000000;
+        background-image: url(Images/DBot.png);
+        background-size: 300px 300px;
+        background-repeat: no-repeat;
+        background-position: -25% 100%;
+    }
+
+    .logo {
+        width: 250px;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    .header-text {
+        margin-top: -19%;
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .header-text p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .header-text h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .header-text h1 span {
+        color: cyan;
+    }
+}
+/*                      -----------------Media query for screens smaller than 768px-----------------                                */
+    @media screen and (max-width: 768px) {
+        nav ul {
+            display: none; /* Hide the navigation menu */
+        }
+    
+        .fa-ellipsis {
+            display: block; /* Show the menu icon */
+            font-size: 24px;
+            cursor: pointer;
+        }
+    
+        .header-text h1 {
+            font-size: 28px;
+        }
+    }
+    
+/*              -----------------Media query for screens smaller than 480px-----------------              */
+    @media screen and (max-width: 480px) {
+        .header-text p {
+            font-size: 16px;
+        }
+    
+        .header-text h1 {
+            font-size: 24px;
+        }
+    }
