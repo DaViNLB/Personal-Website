@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b9b5b72753.js" crossorigin="anonymous"></script>
+</head>
+<!--            --------------------ABOUT--------------------            -->
+<body>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Images/About Img PixelArt.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello! My name is Davin Bryfogle. I’m currently studying information technology and networking at Delaware Tech. I'm also working on my personal website. 
+                    I’ve had the opportunity to work in a variety of roles, from stocking shelves, to paving asphalt driveways, to washing dishes for a high-end restaurant. 
+                    Through it all, I’ve developed a strong eye for detail and a love for tackling hands-on projects.
+                    When I’m not busy with work or coding, I enjoy drawing and writing poetry—it’s a great way for me to stay creative. 
+                    I’m always looking to learn something new, whether it’s through my art or the projects I take on.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links" onclick="toggleTab(event, 'skills')">Skills</p>
+                        <p class="tab-links" onclick="toggleTab(event, 'experience')">Experience</p>
+                        <p class="tab-links" onclick="toggleTab(event, 'education')">Education</p>
+                    </div>
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>UI/UX design</span><br>User Interface/Experience</li>
+                    <li><span>Fun Haver/Creator</span><br>I enjoy the occasional cage fight while drawing and drinking refreshments</li>
+                    <li><span>Programmer</span><br>I enjoy the long nights of coding, punding redbulls chasing the code-dragon.</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>Experience</span><br>Experience</li>
+                    <li><span>Experience</span><br>Experience</li>
+                    <li><span>Experience</span><br>Experience</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>Education</span><br>Education</li>
+                    <li><span>Education</span><br>Education</li>
+                    <li><span>Education</span><br>Education</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    var sidemenu = document.getElementById("sidemenu");
+    var menuButton = document.getElementById("menuButton");
+    var menu = document.getElementById("menu");
+    // Close all tabs when the page loads
+    function toggleTab(event, tabname) {
+    var selectedTab = document.getElementById(tabname);
+    var isCurrentlyActive = selectedTab.classList.contains("active-tab");
+
+    closeAllTabs(); // Close all tabs initially
+
+    if (!isCurrentlyActive) {
+        selectedTab.classList.add("active-tab");
+        event.currentTarget.classList.add("active-link"); // Add active-link to clicked tab
+    }
+}
+
+function closeAllTabs() {
+    // Remove active-tab and active-link from all elements
+    for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].classList.remove("active-tab");
+    }
+    for (var j = 0; j < tablinks.length; j++) {
+        tablinks[j].classList.remove("active-link");
+    }
+}
+</script> 
+</html>
+</body>
