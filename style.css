@@ -128,6 +128,41 @@ nav ul li a:hover::after{
     width: 100%;
     color: cyan;
 }
+/* Horizontal nav bar styling */
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu li a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-menu li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: cyan;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
 .menu-button {
     display: block; /* Ensure the button is always visible */
     background: none;
