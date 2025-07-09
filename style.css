@@ -1,3 +1,120 @@
+/* ---------- NAVIGATION ---------- */
+
+/* Desktop Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    position: relative;
+}
+
+.logo {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Horizontal nav menu */
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-menu li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: cyan;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger menu button (always visible on small screens) */
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+/* Mobile Side Menu */
+.side-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 1000;
+    list-style: none;
+}
+
+.side-menu.open {
+    display: flex;
+}
+
+.side-menu li {
+    margin: 10px 0;
+}
+
+.side-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.side-menu li a:hover {
+    color: cyan;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .side-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 250px;
+        background-color: #222;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-menu.open {
+        display: flex;
+    }
+}
+
 @font-face {
     font-family: 'Silkscreen';
     src: url(Fonts/Silkscreen/slkscr.ttf) format('truetype'),
@@ -67,12 +184,7 @@ body{
 .container{
     padding: 50px 10%;
 }
-nav{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
 .logo-container{
     position: absolute; /* new */
     top: 0; /* new */
@@ -129,106 +241,35 @@ nav ul li a:hover::after{
     color: cyan;
 }
 /* Horizontal nav bar styling */
-.nav-menu {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    margin-left: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-}
 
-.nav-menu li {
-    margin: 0;
-}
 
-.nav-menu li a {
-    font-size: 25px;
-    color: white;
-    text-decoration: none;
-    position: relative;
-}
 
-.nav-menu li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: cyan;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
 
-.nav-menu li a:hover::after {
-    width: 100%;
-}
-.menu-button {
-    display: block; /* Ensure the button is always visible */
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white; /* Match the theme */
-    cursor: pointer;
-    z-index: 1000; /* Ensure it appears above other elements */
-    position: relative; /* Adjust position if needed */
-    padding: 10px;
-}
 
-.menu-button:hover {
-    color: cyan; /* Add hover effect */
-}
 
-.side-menu {
-    display: none; /* Hide the menu by default */
-    list-style: none;
-    flex-direction: column; /* Stack items vertically */
-    background-color: #333; /* Match the theme */
-    position: absolute;
-    top: 50px; /* Adjust based on your layout */
-    right: 10px; /* Align with the button */
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 999; /* Ensure it appears above other elements */
-}
 
-.side-menu.open {
-    display: flex; /* Show the menu when open */
-}
 
-.side-menu li {
-    margin: 10px 0; /* Add spacing between menu items */
-}
 
-.side-menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
 
-.side-menu li a:hover {
-    color: cyan; /* Add hover effect */
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
-    .menu-button {
-        display: block; /* Ensure the button is visible */
-    }
+    
 
-    .side-menu {
-        position: fixed; /* Make it fixed for better UX */
-        top: 0;
-        right: -250px; /* Start off-screen */
-        width: 250px;
-        height: 100vh;
-        background-color: #333;
-        transition: transform 0.3s ease;
-    }
+    
 
-    .side-menu.open {
-        transform: translateX(-250px); /* Slide into view */
-    }
+    
 }
 .header-text{
     margin-top: -7%; /* changed */
@@ -692,23 +733,10 @@ form .btn3{
 }
 @media screen and (max-width: 600px){
    
-    nav {
-        position: relative;
-    }
+    
 
-    .side-menu {
-        width: 250px;
-        height: 100vh;
-        background-color: #333;
-        color: white;
-        position: fixed;
-        top: 0;
-        right: -250px; /* Start off-screen */
-        transition: transform 0.3s ease;
-      }
-      .side-menu.open {
-        transform: translateX(-250px); /* Slide it into view */
-      }
+    
+      
       .ellipsis-button {
         font-size: 24px;
         color: cyan;
