@@ -1,3 +1,28 @@
+.logo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 120px;
+    }
+}
+
 /* ---------- NAVIGATION ---------- */
 
 /* Desktop Navigation */
@@ -9,10 +34,7 @@ nav {
     position: relative;
 }
 
-.logo {
-    max-width: 250px;
-    height: auto;
-}
+
 
 /* Horizontal nav menu */
 .nav-menu {
@@ -185,23 +207,9 @@ body{
     padding: 50px 10%;
 }
 
-.logo-container{
-    position: absolute; /* new */
-    top: 0; /* new */
-    left: 0; /* new */
-    display: flex;
-    align-items: left;
-    margin-left: 0;
-}
 
-.logo{
-    width: 500px;
-    align-items: left;
-    margin-left: 125px;
-    margin-right: auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
+
+
 
 nav ul{
     display: flex;
@@ -799,11 +807,7 @@ form .btn3{
         background-position: -25% 100%;
     }
 
-    .logo {
-        width: 250px;
-        margin-left: 0%;
-        margin-top: 0%;
-    }
+    
 
     .header-text {
         margin-top: -19%;
@@ -852,3 +856,4 @@ form .btn3{
             font-size: 24px;
         }
     }
+}
