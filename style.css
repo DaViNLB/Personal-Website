@@ -5,7 +5,6 @@
     width: 100%;
     max-width: 200px;
     height: auto;
-    margin: 0;
     z-index: 1002;
 }
 
@@ -32,9 +31,9 @@
 /* Desktop Navigation */
 nav {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: space-between;
-    padding: 60px 10% 20px 10%;
+    padding: 40px 10% 20px; /* Top padding keeps it below the logo */
     position: relative;
 }
 /* Horizontal nav menu */
@@ -75,12 +74,13 @@ nav {
     border: none;
     font-size: 30px;
     color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;
     cursor: pointer;
-    z-index: 1001;
-    padding: 10px;
 }
 
-/* Mobile Side Menu */
 .side-menu {
     display: none;
     flex-direction: column;
@@ -103,16 +103,16 @@ nav {
 }
 
 .side-menu li a {
+    font-size: 20px;
     color: white;
     text-decoration: none;
-    font-size: 20px;
 }
 
 .side-menu li a:hover {
     color: cyan;
 }
 
-/* Responsive behavior */
+/* Show hamburger and hide nav-menu on small screens */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -121,6 +121,7 @@ nav {
     .menu-button {
         display: block;
     }
+}
 
     .side-menu {
         position: absolute;
