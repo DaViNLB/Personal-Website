@@ -34,12 +34,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 10%;
+    padding: 60px 10% 20px 10%;
     position: relative;
 }
-
-
-
 /* Horizontal nav menu */
 .nav-menu {
     display: flex;
