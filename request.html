@@ -1,71 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request a Service</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/b9b5b72753.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request a Service</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Request a Service</h1>
-                <p><i class="fa-solid fa-envelope"></i> davin.bry@outlook.com</p>
-                <p><i class="fa-solid fa-phone"></i> 123-456-7890</p>
-                <div class="social-icons">
-                    <a href="https://github.com/DaViNLB"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                </div>
-            </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <input type="tel" name="Phone" placeholder="Your Phone Number" required>
-                    <select name="Service" required>
-                        <option value="" disabled selected>Select a Service</option>
-                        <option value="Lawn Mowing">Lawn Mowing & Maintenance</option>
-                        <option value="Pressure Washing">Pressure Washing</option>
-                        <option value="House Cleaning">House Cleaning</option>
-                        <option value="UI/UX Design">UI/UX Design</option>
-                        <option value="PC Repair">PC Building/Repairs</option>
-                    </select>
-                    <input type="date" name="Preferred Date" required>
-                    <textarea name="Message" rows="6" placeholder="Additional notes or requests..."></textarea>
-                    <button type="submit" class="btn3">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright @ 2024. <img src="Images/DLB Logo Blurry Rainbow.png" class="logo"> All rights reserved.</p>
-        </div>
-    </div>
-</div>
+  <div class="request-container">
+    <h1>Request a Service</h1>
+    <form id="service-request-form">
+      
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
 
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-    const form = document.forms['submit-to-google-sheet'];
-    const msg = document.getElementById('msg');
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required />
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => {
-                msg.innerHTML = "Request submitted successfully!";
-                setTimeout(() => msg.innerHTML = '', 4000);
-                form.reset();
-            })
-            .catch(error => {
-                msg.innerHTML = "Error. Please try again.";
-                console.error('Error!', error.message);
-            });
-    });
-</script>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="service">Choose a Service:</label>
+      <select id="service" name="service" required>
+        <option value="">-- Please choose an option --</option>
+        <option value="lawn_mowing">Lawn Mowing & Maintenance</option>
+        <option value="pressure_washing">Pressure Washing</option>
+        <option value="desktop_repairs">Desktop Building / Repairs</option>
+        <option value="house_cleaning">House Cleaning</option>
+        <option value="ui_ux_design">UI / UX Design</option>
+      </select>
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="notes">Additional Details (Optional):</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Any special requests or info?"></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
 </body>
 </html>
