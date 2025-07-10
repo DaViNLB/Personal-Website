@@ -25,7 +25,11 @@
         max-width: 120px;
     }
 }
-
+@media screen and (max-width: 1150px) and (min-width: 769px) {
+  .nav-menu {
+    margin-left: 260px; /* Push nav further to the right to clear the logo */
+  }
+}
 /* ---------- NAVIGATION ---------- */
 
 /* Desktop Navigation */
