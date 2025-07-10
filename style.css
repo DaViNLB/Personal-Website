@@ -108,7 +108,21 @@ nav {
 .side-menu li a:hover {
     color: cyan;
 }
+/* Call to Action: Request a Service button */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #10b981;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
 
+.cta-button:hover {
+  background-color: #059669;
+}
 /* Show hamburger and hide nav-menu on small screens */
 @media (max-width: 768px) {
     .nav-menu {
