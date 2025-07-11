@@ -160,10 +160,12 @@ position: relative;
 
 /* Logo and tagline */
 .logo-container {
-   position: absolute;
-  top: 10px;
-  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centers both logo and tagline */
+  gap: 4px;             /* Optional: spacing between logo and tagline */
 }
+
 .logo {
   max-width: 100px; /* or whatever size works visually */
   height: auto;
@@ -171,11 +173,11 @@ position: relative;
   padding: 0;
 }
 .tagline {
-  margin-left: 0;
-  margin-top: 4px;
   font-size: 14px;
   color: #93E9BE;
-  text-align: left;
+  text-align: center;   /* Center the text itself */
+  margin: 0;            /* Remove extra spacing */
+  padding: 0;
 }
 
 /* Desktop nav menu stays to the right */
