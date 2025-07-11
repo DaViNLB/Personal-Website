@@ -849,11 +849,11 @@ button[type="submit"]:hover {
     padding: 15px 20px;
   }
 
-  .logo {
-    max-width: 120px;
-    height: auto;
-  }
-
+ .logo {
+  max-width: 90px;
+  height: auto;
+  margin-right: 10px; /* Optional: adds spacing from the edge */
+}
   .menu-button {
     display: block;
     font-size: 28px;
