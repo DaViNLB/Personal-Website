@@ -171,9 +171,11 @@ position: relative;
   padding: 0;
 }
 .tagline {
-  margin-top: 8px;
-  font-size: 16px;
+  margin-left: 0;
+  margin-top: 4px;
+  font-size: 14px;
   color: #93E9BE;
+  text-align: left;
 }
 
 /* Desktop nav menu stays to the right */
