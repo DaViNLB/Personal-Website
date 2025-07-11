@@ -47,3 +47,6 @@ window.addEventListener('click', function(event) {
         document.getElementById('modal').style.display = 'none';
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("menu").classList.remove("open");
+});
