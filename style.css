@@ -164,6 +164,46 @@ body{
     position: relative; /* new */
     overflow: hidden;
 }
+/* Layout for the top logo + nav bar */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo and tagline */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tagline {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #93E9BE;
+}
+
+/* Desktop nav menu stays to the right */
+.desktop-nav {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .dropdown {
     position: relative;
   }
