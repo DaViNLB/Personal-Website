@@ -25,6 +25,12 @@ nav {
   display: flex;
   align-items: center;
 }
+.nav-left {
+  margin-right: auto;
+}
+.nav-right {
+  margin-left: auto;
+}
 /* Horizontal nav menu */
 .nav-menu {
     display: flex;
@@ -839,39 +845,32 @@ button[type="submit"]:hover {
 
 /* Mobile devices: max 600px */
 @media screen and (max-width: 600px) {
-  .nav-menu {
-    display: none;
+  nav {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    max-width: 120px;
+    height: auto;
   }
 
   .menu-button {
     display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: cyan;
+    cursor: pointer;
+    position: static;
   }
 
-  .header-text {
-    margin-top: -19%;
-    text-align: left;
-  }
-
-  .header-text p {
-    font-size: 18px;
-  }
-
-  .header-text h1 {
-    font-size: 24px;
+  .nav-menu {
+    display: none;
   }
 
   .side-menu {
     display: flex;
     flex-direction: column;
-  }
-
-  .logo {
-    max-width: 120px;
-  }
-
-  #header {
-    background-size: 300px 300px;
-    background-position: -25% 100%;
   }
 }
 
