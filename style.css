@@ -877,7 +877,7 @@ button[type="submit"]:hover {
 /* Tablets & small laptops: 601px–1024px */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .logo {
-    max-width: 150px;
+    max-width: 100px;
   }
 
   .nav-menu {
