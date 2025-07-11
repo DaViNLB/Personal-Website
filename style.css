@@ -20,6 +20,11 @@ nav {
     position: relative;
     flex-wrap: wrap;
 }
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
 /* Horizontal nav menu */
 .nav-menu {
     display: flex;
