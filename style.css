@@ -1,14 +1,3 @@
-.logo {
-    max-width: 200px;
-    height: auto;
-    position: static;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
 /* ---------- NAVIGATION ---------- */
 
 /* Desktop Navigation */
@@ -164,19 +153,23 @@ body{
 }
 /* Layout for the top logo + nav bar */
 .header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 10px;
+position: relative;
 }
 
 /* Logo and tagline */
 .logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+   position: absolute;
+  top: 10px;
+  left: 10px;
 }
-
+.logo {
+  max-width: 100px; /* or whatever size works visually */
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
 .tagline {
   margin-top: 8px;
   font-size: 16px;
@@ -222,7 +215,7 @@ body{
     display: block;
   }
 .container{
-    padding: 50px 10%;
+    padding: 10px 20px;
 }
 
 nav ul{
