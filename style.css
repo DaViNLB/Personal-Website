@@ -842,7 +842,11 @@ button[type="submit"]:hover {
     }
 }
 /* =================== MEDIA QUERIES =================== */
-
+@media screen and (max-width: 400px) {
+  .logo {
+    max-width: 75px;
+  }
+}
 /* Mobile devices: max 600px */
 @media screen and (max-width: 600px) {
   nav {
