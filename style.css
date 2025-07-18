@@ -334,12 +334,13 @@ nav ul li a:hover::after{
 }
 
 .hero-image {
-  position: absolute;
-  bottom: 10px;   /* Adjust how far from bottom */
-  right: 10px;    /* Adjust how far from right */
-  width: 180px;   /* Make sure it's not too large */
+  position: fixed;       /* change from absolute to fixed */
+  bottom: 20px;          /* adjust distance from bottom */
+  right: 20px;           /* adjust distance from right */
+  width: 180px;          /* adjust to fit your screen */
   height: auto;
-  z-index: 2;
+  z-index: 9999;         /* make sure it's on top of everything */
+  pointer-events: none;  /* image doesn't block clicks */
 }
 /*                 ABOUT                   ----------------ABOUT----------------                      ABOUT                  */
 #about{
